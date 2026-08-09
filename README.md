@@ -1,3 +1,4 @@
+# Poshmark Depop Merch Inventory App
 # Inventory App
 
 A small Python command-line inventory manager for tracking items and quantities.
