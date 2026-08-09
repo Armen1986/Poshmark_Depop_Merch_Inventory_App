@@ -1,45 +1,31 @@
-# Poshmark Depop Merch Inventory App
-# Inventory App
+# ODYSSEY // Inventory Nexus
 
-A small Python command-line inventory manager for tracking items and quantities.
+Local-first resale operations dashboard for tracking inventory, researching markets, organizing photo evidence, and generating listing copy.
 
-## Features
+## What’s included
 
-- Add new inventory items
-- Update item quantities
-- Remove items from inventory
-- List all inventory items with quantity and description
-- Persist inventory to a local JSON file
+- SQLite-backed inventory database
+- Item entry, editing, and status tracking
+- Market research links for eBay, Poshmark, Mercari, Depop, and Google Images
+- Confirmed comparable sales tracking with suggested-price updates
+- Photo upload and review workflow
+- Listing-copy generation with optional OpenAI support
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.10+
+- tkinter (included with most Python installations on macOS and Windows)
+- Optional dependencies:
+  - `python3 -m pip install requests pillow`
 
-## Usage
-
-Run the app from the repository root:
-
-```bash
-python app.py add "Widget" 10 --description "Standard widget"
-python app.py update "Widget" 15
-python app.py remove "Widget"
-python app.py list
-```
-
-### Commands
-
-- `add <name> <quantity>`: Add a new item or increase quantity for an existing item.
-- `update <name> <quantity>`: Set the exact quantity for an existing item.
-- `remove <name>`: Remove an item from inventory.
-- `list`: Show all inventory items.
-
-## Data Storage
-
-Inventory data is stored in `inventory.json` in the repository directory. The file is created automatically when the first command runs.
-
-## Example
+## Run locally
 
 ```bash
-python app.py add "Laptop" 5 --description "Office laptops"
-python app.py list
+python3 inventory_nexus.py
 ```
+
+## Notes
+
+- No API key is embedded in the app source.
+- If `OPENAI_API_KEY` is present, the listing helper can use it; otherwise the app remains fully local.
+- Market links open in your browser, and confirmed comps require user confirmation.
